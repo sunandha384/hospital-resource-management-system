@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrustCare Hospital - Ambulance Management</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <div class="page-header">
+        <h1>🚑 Ambulance Management</h1>
+
+        <a href="menu.html" class="back-btn">
+            ← Dashboard
+        </a>
+    </div>
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <h2>15</h2>
+            <p>Total Ambulances</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>8</h2>
+            <p>Available</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>5</h2>
+            <p>On Duty</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>2</h2>
+            <p>Maintenance</p>
+        </div>
+
+    </div>
+
+    <input
+        type="text"
+        id="staffSearch"
+        placeholder="Search Ambulance / Driver..."
+        class="search-box"
+    >
+
+    <table class="data-table">
+
+        <thead>
+            <tr>
+                <th>Ambulance ID</th>
+                <th>Vehicle Number</th>
+                <th>Driver Name</th>
+                <th>Contact Number</th>
+                <th>Type</th>
+                <th>Current Location</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody id="ambulanceTableBody">
+</tbody>
+
+    </table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

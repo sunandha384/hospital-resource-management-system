@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustCare Hospital - Pharmacy Department</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <div class="page-header">
+        <h1>Pharmacy Department</h1>
+
+        <a href="staff.html" class="back-btn">
+            ← Staff Dashboard
+        </a>
+    </div>
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <h2>10</h2>
+            <p>Total Staff</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>2</h2>
+            <p>Senior Pharmacists</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>5</h2>
+            <p>Sales Counters</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>3</h2>
+            <p>Store Staff</p>
+        </div>
+
+    </div>
+
+    <input
+        type="text"
+        id="staffSearch"
+        placeholder="Search Pharmacy Staff..."
+        class="search-box"
+    >
+
+    <table class="data-table">
+
+        <thead>
+            <tr>
+                <th>Staff ID</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Counter</th>
+                <th>Shift</th>
+                <th>Phone</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tbody id="pharmacyTableBody">
+</tbody>
+    </table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

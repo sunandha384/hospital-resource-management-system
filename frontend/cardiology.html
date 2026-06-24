@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrustCare Hospital - Cardiology Department</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.doctor-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    margin-top:30px;
+}
+
+.doctor-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.doctor-card:hover{
+    transform:translateY(-10px);
+}
+
+.doctor-card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    cursor:pointer;
+}
+
+.doctor-info{
+    padding:20px;
+}
+
+.doctor-info h3{
+    color:#14532d;
+    margin-bottom:10px;
+}
+
+.doctor-info p{
+    margin:8px 0;
+    color:#444;
+}
+
+.available{
+    color:green;
+    font-weight:bold;
+}
+
+.leave{
+    color:red;
+    font-weight:bold;
+}
+
+.search-box{
+    width:100%;
+    padding:15px;
+    border-radius:10px;
+    border:none;
+    margin:25px 0;
+    font-size:16px;
+}
+
+/* IMAGE POPUP */
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.95);
+}
+
+.modal img{
+    display:block;
+    max-width:85%;
+    max-height:85%;
+    margin:40px auto;
+    border-radius:15px;
+}
+
+.modal span{
+    position:absolute;
+    top:20px;
+    right:40px;
+    color:white;
+    font-size:50px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <div class="page-header">
+        <h1>❤️ Cardiology Department</h1>
+
+        <a href="doctors.html" class="back-btn">
+            ← Doctors Dashboard
+        </a>
+    </div>
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <h2>3</h2>
+            <p>Total Cardiologists</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>2</h2>
+            <p>Available Today</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>1</h2>
+            <p>On Leave</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>24/7</h2>
+            <p>Emergency Coverage</p>
+        </div>
+
+    </div>
+
+    <input
+        type="text"
+        id="doctorSearch"
+        class="search-box"
+        placeholder="Search Doctor Name..."
+    >
+
+    <div class="doctor-grid">
+
+        <div class="doctor-card">
+            <img src="images/sunanda.png" alt="Dr. Y. Sunanda" onclick="openImage(this.src)">
+            <div class="doctor-info">
+                <h3>Dr. Y. Sunanda</h3>
+                <p>Senior Cardiologist</p>
+                <p>Experience: 15 Years</p>
+                <p>Qualification: MBBS, MD, DM</p>
+                <p>Room: C101</p>
+                <p class="available">Available</p>
+            </div>
+        </div>
+
+        <div class="doctor-card">
+            <img src="images/sivakoteswara.png" alt="Dr. Y. Siva Koteswara Rao" onclick="openImage(this.src)">
+            <div class="doctor-info">
+                <h3>Dr. Y. Siva Koteswara Rao</h3>
+                <p>Senior Consultant</p>
+                <p>Experience: 15 Years</p>
+                <p>Qualification: MBBS, MD</p>
+                <p>Room: C102</p>
+                <p class="available">Available</p>
+            </div>
+        </div>
+
+        <div class="doctor-card">
+            <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Doctor" onclick="openImage(this.src)">
+            <div class="doctor-info">
+                <h3>Dr. T. Harika</h3>
+                <p>Junior Cardiologist</p>
+                <p>Experience: 10 Years</p>
+                <p>Qualification: MBBS, MD</p>
+                <p>Room: C103</p>
+                <p class="available">Available</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- IMAGE POPUP -->
+
+<div id="imageModal" class="modal">
+    <span onclick="closeImage()">&times;</span>
+    <img id="fullImage">
+</div>
+
+<script>
+
+const search = document.getElementById("doctorSearch");
+
+search.addEventListener("keyup", function(){
+
+    let value = search.value.toLowerCase();
+
+    let cards = document.querySelectorAll(".doctor-card");
+
+    cards.forEach(card => {
+
+        let text = card.innerText.toLowerCase();
+
+        if(text.includes(value)){
+            card.style.display = "block";
+        }else{
+            card.style.display = "none";
+        }
+
+    });
+
+});
+
+function openImage(src){
+    document.getElementById("imageModal").style.display = "block";
+    document.getElementById("fullImage").src = src;
+}
+
+function closeImage(){
+    document.getElementById("imageModal").style.display = "none";
+}
+
+window.onclick = function(event){
+    let modal = document.getElementById("imageModal");
+    if(event.target == modal){
+        modal.style.display = "none";
+    }
+}
+
+</script>
+
+</body>
+</html>

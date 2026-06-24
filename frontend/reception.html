@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustCare Hospital - Reception Department</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <div class="page-header">
+        <h1>Reception Department</h1>
+
+        <a href="staff.html" class="back-btn">
+            ← Staff Dashboard
+        </a>
+    </div>
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <h2>15</h2>
+            <p>Total Reception Staff</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>3</h2>
+            <p>Billing Staff</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>4</h2>
+            <p>Front Desk Executives</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>8</h2>
+            <p>Available Today</p>
+        </div>
+
+    </div>
+
+    <input
+        type="text"
+        id="staffSearch"
+        placeholder="Search Reception Staff..."
+        class="search-box"
+    >
+
+    <table class="data-table">
+
+        <thead>
+            <tr>
+                <th>Staff ID</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Shift</th>
+                <th>Experience</th>
+                <th>Phone</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+<tbody id="receptionTableBody">
+</tbody>
+
+    </table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

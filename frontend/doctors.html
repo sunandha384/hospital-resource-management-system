@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustCare Hospital - Doctors Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <div class="page-header">
+        <h1>Doctors Management</h1>
+
+        <a href="menu.html" class="back-btn">
+            ← Dashboard
+        </a>
+    </div>
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <h2>25</h2>
+            <p>Total Doctors</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>15</h2>
+            <p>Departments</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>7</h2>
+            <p>On Duty</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>3</h2>
+            <p>On Leave</p>
+        </div>
+
+    </div>
+
+    <div class="department-grid">
+
+        <a href="cardiology.html" class="department-card">
+            <div class="icon">❤️</div>
+            <h3>Cardiology</h3>
+            <p>3 Doctors</p>
+        </a>
+
+        <a href="neurology.html" class="department-card">
+            <div class="icon">🧠</div>
+            <h3>Neurology</h3>
+            <p>3 Doctors</p>
+        </a>
+
+        <a href="orthopedics.html" class="department-card">
+            <div class="icon">🦴</div>
+            <h3>Orthopedics</h3>
+            <p>3 Doctors</p>
+        </a>
+
+        <a href="pediatrics.html" class="department-card">
+            <div class="icon">👶</div>
+            <h3>Pediatrics</h3>
+            <p>2 Doctors</p>
+        </a>
+
+        <a href="gynecology.html" class="department-card">
+            <div class="icon">👩</div>
+            <h3>Gynecology</h3>
+            <p>2 Doctors</p>
+        </a>
+
+        <a href="emergency.html" class="department-card">
+            <div class="icon">🚨</div>
+            <h3>Emergency</h3>
+            <p>4 Doctors</p>
+        </a>
+
+        <a href="ophthalmology.html" class="department-card">
+            <div class="icon">👁️</div>
+            <h3>Ophthalmology</h3>
+            <p>2 Doctors</p>
+        </a>
+
+        <a href="ent.html" class="department-card">
+            <div class="icon">👂</div>
+            <h3>ENT</h3>
+            <p>2 Doctors</p>
+        </a>
+
+        <a href="generalmedicine.html" class="department-card">
+            <div class="icon">🩺</div>
+            <h3>General Medicine</h3>
+            <p>4 Doctors</p>
+        </a>
+
+    </div>
+
+    <div class="table-container">
+
+        <h2>Doctors List</h2>
+
+        <table class="data-table">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Doctor Name</th>
+                    <th>Specialization</th>
+                    <th>Experience</th>
+                    <th>Designation</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+
+            <tbody id="doctorTableBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

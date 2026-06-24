@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrustCare Hospital - Patients Management</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <div class="page-header">
+        <h1>Patients Management</h1>
+
+        <a href="menu.html" class="back-btn">
+            ← Dashboard
+        </a>
+    </div>
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <h2>50</h2>
+            <p>Total Patients</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>35</h2>
+            <p>Admitted Patients</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>10</h2>
+            <p>Discharged Patients</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>5</h2>
+            <p>ICU Patients</p>
+        </div>
+
+    </div>
+
+    <input
+        type="text"
+        id="staffSearch"
+        placeholder="Search Patient..."
+        class="search-box"
+    >
+
+    <table class="data-table">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Blood Group</th>
+                <th>Disease</th>
+                <th>Doctor</th>
+                <th>Room</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Admission Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody id="patientTableBody">
+
+</tbody>
+
+    </table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

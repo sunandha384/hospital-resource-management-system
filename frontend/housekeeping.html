@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustCare Hospital - Housekeeping Department</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <div class="page-header">
+        <h1>Housekeeping Department</h1>
+
+        <a href="staff.html" class="back-btn">
+            ← Staff Dashboard
+        </a>
+    </div>
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <h2>30</h2>
+            <p>Total Staff</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>8</h2>
+            <p>Ward Attendants</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>15</h2>
+            <p>Cleaning Staff</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>7</h2>
+            <p>Waste Management</p>
+        </div>
+
+    </div>
+
+    <input
+        type="text"
+        id="staffSearch"
+        placeholder="Search Housekeeping Staff..."
+        class="search-box"
+    >
+
+    <table class="data-table">
+
+        <thead>
+            <tr>
+                <th>Staff ID</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Shift</th>
+                <th>Experience</th>
+                <th>Phone</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody id="housekeepingTableBody">
+</tbody>
+
+    </table>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

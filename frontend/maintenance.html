@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustCare Hospital - Maintenance Department</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <div class="page-header">
+        <h1>Maintenance Department</h1>
+
+        <a href="staff.html" class="back-btn">
+            ← Staff Dashboard
+        </a>
+    </div>
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <h2>22</h2>
+            <p>Total Staff</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>18</h2>
+            <p>Active Repairs</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>3</h2>
+            <p>Critical Issues</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>97%</h2>
+            <p>Equipment Uptime</p>
+        </div>
+
+    </div>
+
+    <input
+        type="text"
+        id="staffSearch"
+        placeholder="Search Maintenance Staff..."
+        class="search-box"
+    >
+
+    <table class="data-table">
+
+        <thead>
+            <tr>
+                <th>Staff ID</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Department</th>
+                <th>Experience</th>
+                <th>Phone</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody id="maintenanceTableBody"></tbody>
+    </table>
+
+    <h2 style="margin-top:40px;">Equipment Maintenance Status</h2>
+
+    <table class="data-table">
+
+        <thead>
+            <tr>
+                <th>Equipment</th>
+                <th>Department</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+    <td>3 Tesla MRI Scanner</td>
+    <td>Radiology</td>
+    <td>Operational</td>
+</tr>
+
+<tr>
+    <td>128-Slice CT Scanner</td>
+    <td>Radiology</td>
+    <td>Operational</td>
+</tr>
+
+<tr>
+    <td>Digital X-Ray System</td>
+    <td>Radiology</td>
+    <td>Operational</td>
+</tr>
+
+<tr>
+    <td>Cath Lab System</td>
+    <td>Cardiology</td>
+    <td>Operational</td>
+</tr>
+
+<tr>
+    <td>ICU Ventilator Network</td>
+    <td>ICU</td>
+    <td>Operational</td>
+</tr>
+
+<tr>
+    <td>Medical Oxygen Plant</td>
+    <td>Utility</td>
+    <td>Operational</td>
+</tr>
+
+<tr>
+    <td>Emergency Generator Unit</td>
+    <td>Power Backup</td>
+    <td>Operational</td>
+</tr>
+
+<tr>
+    <td>Hospital Lift System</td>
+    <td>Building Services</td>
+    <td>Under Maintenance</td>
+</tr>
+
+<tr>
+    <td>Fire Detection System</td>
+    <td>Safety</td>
+    <td>Testing</td>
+</tr>
+
+<tr>
+    <td>Central UPS Network</td>
+    <td>IT Infrastructure</td>
+    <td>Operational</td>
+</tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustCare Hospital - Medicine Stock Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <div class="page-header">
+        <h1>Medicine Stock Management</h1>
+
+        <a href="staff.html" class="back-btn">
+            ← Dashboard
+        </a>
+    </div>
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <h2>20</h2>
+            <p>Total Medicines</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>15</h2>
+            <p>Available</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>3</h2>
+            <p>Low Stock</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>2</h2>
+            <p>Out of Stock</p>
+        </div>
+
+    </div>
+
+    <input
+        type="text"
+        id="medicineSearch"
+        placeholder="Search Medicine..."
+        class="search-box"
+    >
+
+    <table class="data-table">
+
+        <thead>
+            <tr>
+                <th>Medicine ID</th>
+                <th>Medicine Name</th>
+                <th>Category</th>
+                <th>Batch No</th>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Expiry Date</th>
+                <th>Manufacturer</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody id="medicineTableBody">
+        </tbody>
+
+    </table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

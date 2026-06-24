@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustCare Hospital - Nursing Department</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <div class="page-header">
+        <h1>Nursing Department</h1>
+
+        <a href="staff.html" class="back-btn">
+            ← Staff Dashboard
+        </a>
+    </div>
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <h2>40</h2>
+            <p>Total Nurses</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>8</h2>
+            <p>Senior Nurses</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>20</h2>
+            <p>Staff Nurses</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>12</h2>
+            <p>Junior Nurses</p>
+        </div>
+
+    </div>
+
+    <input
+        type="text"
+        id="staffSearch"
+        placeholder="Search Nurse..."
+        class="search-box"
+    >
+
+    <table class="data-table">
+
+        <thead>
+            <tr>
+                <th>Nurse ID</th>
+<th>Name</th>
+<th>Department</th>
+<th>Shift</th>
+<th>Experience</th>
+<th>Phone</th>
+<th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody id="nurseTableBody">
+</tbody>
+
+    </table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
