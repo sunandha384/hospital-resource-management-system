@@ -636,3 +636,38 @@ fetch("http://localhost:8080/pharmacystaff")
 .catch(error => {
     console.error(error);
 });
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", async function () {
+
+    const bedTableBody = document.getElementById("bedTableBody");
+
+    if (bedTableBody) {
+
+        const response = await fetch("http://localhost:8080/api/beds");
+        const beds = await response.json();
+
+        let rows = "";
+
+        beds.forEach(bed => {
+
+            rows += `
+            <tr>
+                <td>${bed.bedId}</td>
+                <td>${bed.ward}</td>
+                <td>${bed.roomNo}</td>
+                <td>${bed.bedNo}</td>
+                <td>${bed.patientName}</td>
+                <td>${bed.doctorName}</td>
+                <td>${bed.status}</td>
+            </tr>`;
+        });
+
+        bedTableBody.innerHTML = rows;
+    }
+
+});

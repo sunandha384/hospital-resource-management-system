@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TrustCare Hospital - Orthopedics Department</title>
+<link rel="icon" type="image/png" href="images/trustcare-logo.png">
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -29,8 +30,9 @@
 
 .doctor-card img{
     width:100%;
-    height:280px;
+    height:350px;
     object-fit:cover;
+    cursor:pointer;
 }
 
 .doctor-info{
@@ -66,8 +68,40 @@
     font-size:16px;
 }
 
+/* IMAGE POPUP */
+
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.modal img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:12px;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:40px;
+    color:white;
+    font-size:50px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
 </style>
 </head>
+
 <body>
 
 <div class="dashboard-container">
@@ -114,9 +148,11 @@
     <div class="doctor-grid">
 
         <div class="doctor-card">
-            <img src="https://randomuser.me/api/portraits/men/61.jpg">
+            <img src="images/gousebaji.png"
+     alt="Dr. SK. Gouse Baji"
+     onclick="openImage(this.src)">
             <div class="doctor-info">
-                <h3>Dr. SK.Gouse Baji</h3>
+                <h3>Dr. SK. Gouse Baji</h3>
                 <p>Senior Orthopedic Surgeon</p>
                 <p>Experience: 11 Years</p>
                 <p>Qualification: MBBS, MS Orthopedics</p>
@@ -126,9 +162,11 @@
         </div>
 
         <div class="doctor-card">
-            <img src="https://randomuser.me/api/portraits/women/67.jpg">
+            <img src="images/abdulla.png"
+     alt="Dr. P. Abdulla"
+     onclick="openImage(this.src)">
             <div class="doctor-info">
-                <h3>Dr. P.Abdulla</h3>
+                <h3>Dr. P. Abdulla</h3>
                 <p>Orthopedic Consultant</p>
                 <p>Experience: 7 Years</p>
                 <p>Qualification: MBBS, MS</p>
@@ -138,12 +176,14 @@
         </div>
 
         <div class="doctor-card">
-            <img src="https://randomuser.me/api/portraits/men/29.jpg">
+            <img src="images/likhitha.png"
+                 alt="Dr. Y. Likhitha Syam"
+                 onclick="openImage(this.src)">
             <div class="doctor-info">
-                <h3>Dr. Y.Likhitha Syam</h3>
-                <p>Junior Orthopedic Specialist</p>
-                <p>Experience: 10 Years</p>
-                <p>Qualification: MBBS, MS</p>
+                <h3>Dr. Y. Likhitha Syam</h3>
+                <p>Senior Orthopedic Surgeon</p>
+                <p>Experience: 9 Years</p>
+                <p>Qualification: MBBS, MS (Orthopedics)</p>
                 <p>Room: O303</p>
                 <p class="available">Available</p>
             </div>
@@ -151,6 +191,13 @@
 
     </div>
 
+</div>
+
+<!-- IMAGE POPUP -->
+
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeImage()">&times;</span>
+    <img id="fullImage">
 </div>
 
 <script>
@@ -176,6 +223,22 @@ search.addEventListener("keyup", function(){
     });
 
 });
+
+function openImage(src){
+    document.getElementById("imageModal").style.display = "flex";
+    document.getElementById("fullImage").src = src;
+}
+
+function closeImage(){
+    document.getElementById("imageModal").style.display = "none";
+}
+
+window.onclick = function(event){
+    const modal = document.getElementById("imageModal");
+    if(event.target === modal){
+        closeImage();
+    }
+}
 
 </script>
 

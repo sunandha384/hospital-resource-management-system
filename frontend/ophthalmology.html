@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TrustCare Hospital - Ophthalmology Department</title>
+<link rel="icon" type="image/png" href="images/trustcare-logo.png">
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -20,7 +21,7 @@
     border-radius:20px;
     overflow:hidden;
     box-shadow:0 10px 25px rgba(0,0,0,0.15);
-    transition:0.3s;
+    transition:.3s;
 }
 
 .doctor-card:hover{
@@ -31,10 +32,21 @@
     width:100%;
     height:280px;
     object-fit:cover;
+    cursor:pointer;
 }
 
 .doctor-info{
     padding:20px;
+}
+
+.doctor-info h3{
+    color:#14532d;
+    margin-bottom:10px;
+}
+
+.doctor-info p{
+    margin:8px 0;
+    color:#444;
 }
 
 .available{
@@ -56,8 +68,39 @@
     font-size:16px;
 }
 
+/* Image Popup */
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.9);
+    justify-content:center;
+    align-items:center;
+}
+
+.modal img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:15px;
+}
+
+.modal span{
+    position:absolute;
+    top:20px;
+    right:40px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+
 </style>
 </head>
+
 <body>
 
 <div class="dashboard-container">
@@ -78,12 +121,12 @@
         </div>
 
         <div class="stat-card">
-            <h2>1</h2>
+            <h2>2</h2>
             <p>Available Today</p>
         </div>
 
         <div class="stat-card">
-            <h2>1</h2>
+            <h2>0</h2>
             <p>On Leave</p>
         </div>
 
@@ -94,38 +137,78 @@
 
     </div>
 
-    <input type="text"
-           id="doctorSearch"
-           class="search-box"
-           placeholder="Search Doctor Name...">
+    <input
+        type="text"
+        id="doctorSearch"
+        class="search-box"
+        placeholder="Search Doctor Name..."
+    >
 
     <div class="doctor-grid">
 
-        <div class="doctor-card">
-            <img src="https://randomuser.me/api/portraits/men/70.jpg">
-            <div class="doctor-info">
-                <h3>Dr. N.Yaswanth</h3>
-                <p>Senior Ophthalmologist</p>
-                <p>Experience: 10 Years</p>
-                <p>Qualification: MBBS, MS Ophthalmology</p>
-                <p>Room: OP801</p>
-                <p class="available">Available</p>
-            </div>
-        </div>
+        <!-- Doctor 1 -->
 
         <div class="doctor-card">
-            <img src="https://randomuser.me/api/portraits/women/71.jpg">
+
+            <img src="images/yaswanth.png"
+                 alt="Dr. N. Yaswanth"
+                 onclick="openImage(this.src)">
+
             <div class="doctor-info">
-                <h3>Dr. N.Priyanka</h3>
-                <p>Eye Specialist</p>
-                <p>Experience: 6 Years</p>
-                <p>Qualification: MBBS, DO</p>
-                <p>Room: OP802</p>
+
+                <h3>Dr. N. Yaswanth</h3>
+
+                <p>Senior Ophthalmologist</p>
+
+                <p>Experience: 12 Years</p>
+
+                <p>Qualification: MBBS, MS (Ophthalmology)</p>
+
+                <p>Room: OP101</p>
+
                 <p class="available">Available</p>
+
             </div>
+
+        </div>
+
+        <!-- Doctor 2 -->
+
+        <div class="doctor-card">
+
+            <img src="images/priyanka.png"
+                 alt="Dr. N. Priyanka"
+                 onclick="openImage(this.src)">
+
+            <div class="doctor-info">
+
+                <h3>Dr. N. Priyanka</h3>
+
+                <p>Consultant Ophthalmologist</p>
+
+                <p>Experience: 8 Years</p>
+
+                <p>Qualification: MBBS, DO</p>
+
+                <p>Room: OP102</p>
+
+                <p class="available">Available</p>
+
+            </div>
+
         </div>
 
     </div>
+
+</div>
+
+<!-- Image Popup -->
+
+<div id="imageModal" class="modal">
+
+    <span onclick="closeImage()">&times;</span>
+
+    <img id="fullImage">
 
 </div>
 
@@ -148,6 +231,20 @@ card.style.display=text.includes(value)?"block":"none";
 });
 
 });
+
+function openImage(src){
+
+document.getElementById("imageModal").style.display="flex";
+
+document.getElementById("fullImage").src=src;
+
+}
+
+function closeImage(){
+
+document.getElementById("imageModal").style.display="none";
+
+}
 
 </script>
 

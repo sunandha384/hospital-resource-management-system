@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TrustCare Hospital - Neurology Department</title>
+<link rel="icon" type="image/png" href="images/trustcare-logo.png">
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -29,8 +31,9 @@
 
 .doctor-card img{
     width:100%;
-    height:280px;
+    height:350px;
     object-fit:cover;
+    cursor:pointer;
 }
 
 .doctor-info{
@@ -66,91 +69,139 @@
     font-size:16px;
 }
 
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.modal img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:10px;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:40px;
+    color:white;
+    font-size:45px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
 </style>
+
 </head>
+
 <body>
 
 <div class="dashboard-container">
 
-    <div class="page-header">
-        <h1>🧠 Neurology Department</h1>
 
-        <a href="doctors.html" class="back-btn">
-            ← Doctors Dashboard
-        </a>
+<div class="page-header">
+    <h1>🧠 Neurology Department</h1>
+
+    <a href="doctors.html" class="back-btn">
+        ← Doctors Dashboard
+    </a>
+</div>
+
+<div class="stats-container">
+
+    <div class="stat-card">
+        <h2>3</h2>
+        <p>Total Neurologists</p>
     </div>
 
-    <div class="stats-container">
-
-        <div class="stat-card">
-            <h2>3</h2>
-            <p>Total Neurologists</p>
-        </div>
-
-        <div class="stat-card">
-            <h2>2</h2>
-            <p>Available Today</p>
-        </div>
-
-        <div class="stat-card">
-            <h2>1</h2>
-            <p>On Leave</p>
-        </div>
-
-        <div class="stat-card">
-            <h2>24/7</h2>
-            <p>Emergency Coverage</p>
-        </div>
-
+    <div class="stat-card">
+        <h2>2</h2>
+        <p>Available Today</p>
     </div>
 
-    <input
-        type="text"
-        id="doctorSearch"
-        class="search-box"
-        placeholder="Search Doctor Name..."
-    >
-
-    <div class="doctor-grid">
-
-        <div class="doctor-card">
-            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Doctor">
-            <div class="doctor-info">
-                <h3>Dr. Y.Hima Bindu</h3>
-                <p>Neurologist</p>
-                <p>Experience: 8 Years</p>
-                <p>Qualification: MBBS, MD</p>
-                <p>Room: N201</p>
-                <p class="available">Available</p>
-            </div>
-        </div>
-
-        <div class="doctor-card">
-            <img src="https://randomuser.me/api/portraits/women/52.jpg" alt="Doctor">
-            <div class="doctor-info">
-                <h3>Dr. E.Sai Chaitanya</h3>
-                <p> Senior Neurology Consultant</p>
-                <p>Experience: 14 Years</p>
-                <p>Qualification: MBBS, MD, DM (Neurology)</p>
-                <p>Room: N202</p>
-                <p class="available">Available</p>
-            </div>
-        </div>
-
-        <div class="doctor-card">
-            <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Doctor">
-            <div class="doctor-info">
-                <h3>Dr. V.Gayatri</h3>
-                <p>Junior Neurologist</p>
-                <p>Experience: 9 Years</p>
-                <p>Qualification: MBBS, MD</p>
-                <p>Room: N203</p>
-                <p class="leave">On Leave</p>
-            </div>
-        </div>
-
+    <div class="stat-card">
+        <h2>1</h2>
+        <p>On Leave</p>
     </div>
 
+    <div class="stat-card">
+        <h2>24/7</h2>
+        <p>Neuro Emergency Care</p>
+    </div>
+
+</div>
+
+<input
+    type="text"
+    id="doctorSearch"
+    class="search-box"
+    placeholder="Search Doctor Name..."
+>
+
+<div class="doctor-grid">
+
+    <div class="doctor-card">
+        <img src="images/himabindu.png"
+             alt="Dr. Y. Hima Bindu"
+             onclick="openImage(this.src)">
+
+        <div class="doctor-info">
+            <h3>Dr. Y. Hima Bindu</h3>
+            <p>Senior Neurologist</p>
+            <p>Experience: 8 Years</p>
+            <p>Qualification: MBBS, MD, DM (Neurology)</p>
+            <p>Room: N101</p>
+            <p class="available">Available</p>
+        </div>
+    </div>
+
+    <div class="doctor-card">
+        <img src="images/saichaitanya.png"
+     alt="Dr. E. Sai Chaitanya"
+     onclick="openImage(this.src)">
+             
+
+        <div class="doctor-info">
+            <h3>Dr. E. Sai Chaitanya</h3>
+            <p>Consultant Neurologist</p>
+            <p>Experience: 10 Years</p>
+            <p>Qualification: MBBS, MD, DM</p>
+            <p>Room: N102</p>
+            <p class="available">Available</p>
+        </div>
+    </div>
+
+    <div class="doctor-card">
+    <img src="images/gayatri.png"
+         alt="Dr. V. Gayatri"
+         onclick="openImage(this.src)">
+
+    <div class="doctor-info">
+        <h3>Dr. V. Gayatri</h3>
+        <p>Senior Neurologist</p>
+        <p>Experience: 9 Years</p>
+        <p>Qualification: MBBS, MD, DM (Neurology)</p>
+        <p>Room: N103</p>
+        <p class="leave">On Leave</p>
+    </div>
+</div>
+
+</div>
+```
+
+</div>
+
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeImage()">&times;</span>
+    <img id="fullImage">
 </div>
 
 <script>
@@ -176,6 +227,23 @@ search.addEventListener("keyup", function(){
     });
 
 });
+
+function openImage(src){
+    document.getElementById("imageModal").style.display = "flex";
+    document.getElementById("fullImage").src = src;
+}
+
+function closeImage(){
+    document.getElementById("imageModal").style.display = "none";
+}
+
+window.onclick = function(event){
+    let modal = document.getElementById("imageModal");
+
+    if(event.target == modal){
+        modal.style.display = "none";
+    }
+}
 
 </script>
 

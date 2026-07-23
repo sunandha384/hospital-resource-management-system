@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TrustCare Hospital - General Medicine Department</title>
+<link rel="icon" type="image/png" href="images/trustcare-logo.png">
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -56,6 +57,74 @@
     font-size:16px;
 }
 
+/* Doctor Image */
+.doctor-card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.doctor-card img:hover{
+    transform:scale(1.03);
+}
+
+/* Popup Background */
+.modal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.92);
+    justify-content:center;
+    align-items:center;
+}
+
+/* Popup Image */
+.modal img{
+    width:auto;
+    height:auto;
+    max-width:70%;
+    max-height:85%;
+    object-fit:contain;
+    border-radius:15px;
+    box-shadow:0 0 30px rgba(255,255,255,.3);
+    animation:zoomIn .3s ease;
+}
+
+/* Close Button */
+.close{
+    position:absolute;
+    top:20px;
+    right:35px;
+    color:white;
+    font-size:50px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.close:hover{
+    color:#2ecc71;
+    transform:scale(1.15);
+}
+
+@keyframes zoomIn{
+    from{
+        transform:scale(.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+
 </style>
 </head>
 <body>
@@ -103,78 +172,166 @@
 
     <div class="doctor-grid">
 
-        <div class="doctor-card">
-            <img src="https://randomuser.me/api/portraits/men/81.jpg">
-            <div class="doctor-info">
-                <h3>Dr. U.Anjali Bavya</h3>
-                <p>Senior Physician</p>
-                <p>Experience: 12 Years</p>
-                <p>Qualification: MBBS, MD</p>
-                <p>Room: GM901</p>
-                <p class="available">Available</p>
-            </div>
+    <!-- Dr. U. Anjali Bavya -->
+
+    <div class="doctor-card">
+
+        <img src="images/anjalibavya.png"
+             alt="Dr. U. Anjali Bavya"
+             onclick="openImage(this.src)">
+
+        <div class="doctor-info">
+
+            <h3>Dr. U. Anjali Bavya</h3>
+
+            <p>Senior Physician</p>
+
+            <p>Experience: 12 Years</p>
+
+            <p>Qualification: MBBS, MD (General Medicine)</p>
+
+            <p>Room: GM901</p>
+
+            <p class="available">Available</p>
+
         </div>
 
-        <div class="doctor-card">
-            <img src="https://randomuser.me/api/portraits/women/82.jpg">
-            <div class="doctor-info">
-                <h3>Dr. T.Yasaswini</h3>
-                <p>Consultant Physician</p>
-                <p>Experience: 7 Years</p>
-                <p>Qualification: MBBS, MD</p>
-                <p>Room: GM902</p>
-                <p class="available">Available</p>
-            </div>
+    </div>
+
+    <!-- Dr. T. Yasaswini -->
+
+    <div class="doctor-card">
+
+        <img src="images/yasaswini.png"
+             alt="Dr. T. Yasaswini"
+             onclick="openImage(this.src)">
+
+        <div class="doctor-info">
+
+            <h3>Dr. T. Yasaswini</h3>
+
+            <p>Consultant Physician</p>
+
+            <p>Experience: 7 Years</p>
+
+            <p>Qualification: MBBS, MD</p>
+
+            <p>Room: GM902</p>
+
+            <p class="available">Available</p>
+
         </div>
 
-        <div class="doctor-card">
-            <img src="https://randomuser.me/api/portraits/men/83.jpg">
-            <div class="doctor-info">
-                <h3>Dr. A.Yogesh</h3>
-                <p>General Physician</p>
-                <p>Experience: 9 Years</p>
-                <p>Qualification: MBBS, DNB</p>
-                <p>Room: GM903</p>
-                <p class="available">Available</p>
-            </div>
+    </div>
+
+    <!-- Dr. A. Yogesh -->
+
+    <div class="doctor-card">
+
+        <img src="images/yogesh.png"
+             alt="Dr. A. Yogesh"
+             onclick="openImage(this.src)">
+
+        <div class="doctor-info">
+
+            <h3>Dr. A. Yogesh</h3>
+
+            <p>General Physician</p>
+
+            <p>Experience: 9 Years</p>
+
+            <p>Qualification: MBBS, DNB</p>
+
+            <p>Room: GM903</p>
+
+            <p class="available">Available</p>
+
         </div>
 
-        <div class="doctor-card">
-            <img src="https://randomuser.me/api/portraits/women/84.jpg">
-            <div class="doctor-info">
-                <h3>Dr. T.Poojitha</h3>
-                <p>Senior Physician</p>
-                <p>Experience: 11 Years</p>
-                <p>Qualification: MBBS</p>
-                <p>Room: GM904</p>
-                <p class="leave">On Leave</p>
-            </div>
+    </div>
+
+    <!-- Dr. T. Poojitha -->
+
+    <div class="doctor-card">
+
+        <img src="images/poojitha.png"
+             alt="Dr. T. Poojitha"
+             onclick="openImage(this.src)">
+
+        <div class="doctor-info">
+
+            <h3>Dr. T. Poojitha</h3>
+
+            <p>Senior Physician</p>
+
+            <p>Experience: 11 Years</p>
+
+            <p>Qualification: MBBS</p>
+
+            <p>Room: GM904</p>
+
+            <p class="leave">On Leave</p>
+
         </div>
 
     </div>
 
 </div>
 
+</div>
+
+<!-- Image Popup -->
+
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeImage()">&times;</span>
+    <img id="fullImage" src="" alt="Doctor Image">
+</div>
 <script>
 
-const search=document.getElementById("doctorSearch");
+const search = document.getElementById("doctorSearch");
 
-search.addEventListener("keyup",function(){
+search.addEventListener("keyup", function () {
 
-let value=search.value.toLowerCase();
+    let value = search.value.toLowerCase();
 
-let cards=document.querySelectorAll(".doctor-card");
+    let cards = document.querySelectorAll(".doctor-card");
 
-cards.forEach(card=>{
+    cards.forEach(card => {
 
-let text=card.innerText.toLowerCase();
+        let text = card.innerText.toLowerCase();
 
-card.style.display=text.includes(value)?"block":"none";
+        card.style.display = text.includes(value) ? "block" : "none";
+
+    });
 
 });
 
-});
+// Open Image
+function openImage(src){
+    const modal = document.getElementById("imageModal");
+    const img = document.getElementById("fullImage");
 
+    img.src = src;
+    modal.style.display = "flex";
+}
+
+function closeImage(){
+    document.getElementById("imageModal").style.display = "none";
+}
+
+window.onclick = function(event){
+    const modal = document.getElementById("imageModal");
+
+    if(event.target === modal){
+        closeImage();
+    }
+}
+
+document.addEventListener("keydown", function(event){
+    if(event.key === "Escape"){
+        closeImage();
+    }
+});
 </script>
 
 </body>

@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TrustCare Hospital - Gynecology Department</title>
+<link rel="icon" type="image/png" href="images/trustcare-logo.png">
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -29,7 +30,7 @@
 
 .doctor-card img{
     width:100%;
-    height:280px;
+    height:350px;
     object-fit:cover;
 }
 
@@ -55,6 +56,40 @@
     margin:25px 0;
     font-size:16px;
 }
+
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.modal img{
+    max-width:90%;
+    max-height:90%;
+    object-fit:contain;
+}
+
+.modal span{
+    position:absolute;
+    top:20px;
+    right:40px;
+    color:white;
+    font-size:50px;
+    cursor:pointer;
+}
+.lalitha-img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    object-position:center 35%;
+}  
 
 </style>
 </head>
@@ -94,15 +129,20 @@
 
     </div>
 
-    <input type="text"
-           id="doctorSearch"
-           class="search-box"
-           placeholder="Search Doctor Name...">
+    <input
+        type="text"
+        id="doctorSearch"
+        class="search-box"
+        placeholder="Search Doctor Name..."
+    >
 
     <div class="doctor-grid">
 
         <div class="doctor-card">
-            <img src="images/lalitha.png" alt="Dr. Y. Lalitha" onclick="openImage(this.src)">
+            <img src="images/lalitha.png"
+                class="lalitha-img"
+                alt="Dr. Y. Lalitha"
+                onclick="openImage(this.src)">
             <div class="doctor-info">
                 <h3>Dr. Y. Lalitha</h3>
                 <p>Senior Gynecologist</p>
@@ -114,9 +154,12 @@
         </div>
 
         <div class="doctor-card">
-            <img src="https://randomuser.me/api/portraits/women/45.jpg">
+            <img src="images/harichandana.png"
+     alt="Dr. E. Hari Chandana"
+     onclick="openImage(this.src)">
+                 
             <div class="doctor-info">
-                <h3>Dr. E.Hari Chandana</h3>
+                <h3>Dr. E. Hari Chandana</h3>
                 <p>Consultant Gynecologist</p>
                 <p>Experience: 8 Years</p>
                 <p>Qualification: MBBS, DGO</p>
@@ -129,25 +172,43 @@
 
 </div>
 
+<div id="imageModal" class="modal">
+    <span onclick="closeImage()">&times;</span>
+    <img id="fullImage">
+</div>
+
 <script>
 
-const search=document.getElementById("doctorSearch");
+const search = document.getElementById("doctorSearch");
 
-search.addEventListener("keyup",function(){
+search.addEventListener("keyup", function(){
 
-let value=search.value.toLowerCase();
+    let value = search.value.toLowerCase();
 
-let cards=document.querySelectorAll(".doctor-card");
+    let cards = document.querySelectorAll(".doctor-card");
 
-cards.forEach(card=>{
+    cards.forEach(card => {
 
-let text=card.innerText.toLowerCase();
+        let text = card.innerText.toLowerCase();
 
-card.style.display=text.includes(value)?"block":"none";
+        if(text.includes(value)){
+            card.style.display = "block";
+        }else{
+            card.style.display = "none";
+        }
+
+    });
 
 });
 
-});
+function openImage(src){
+    document.getElementById("imageModal").style.display = "flex";
+    document.getElementById("fullImage").src = src;
+}
+
+function closeImage(){
+    document.getElementById("imageModal").style.display = "none";
+}
 
 </script>
 
